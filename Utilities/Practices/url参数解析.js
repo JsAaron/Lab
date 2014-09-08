@@ -4,6 +4,7 @@
  * var url = "http://www.taobao.com/index.php?key0=0&key1=1&key2=2"; 
  * var obj = parseQueryString(url); 
  * alert(obj.key0); // 输出0
+ * @author Jesse Wong (@straybugs)
  */
 
 function parseQueryString(str){

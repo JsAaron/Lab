@@ -1,6 +1,7 @@
 /**
  * 以字符串第二个字符开始，按字典排序
  * ["abd","cba","ba",]，排序后["ba","cba","abd"]
+ * @author Jesse Wong (@straybugs)
  */
 
 
