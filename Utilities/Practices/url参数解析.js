@@ -7,16 +7,44 @@
  * @author Jesse Wong (@straybugs)
  */
 
+// split version
 function parseQueryString(str){
+
+  if (typeof str !== 'string') {
+    return {};
+  }
+
   var pairs = str.replace(/^.*\?/, '').split('&'),
       res = {};
+
   for (var i = pairs.length - 1; i > 0; i -= 1) {
     var p = pairs[i].split('=');
     res[p[0]] = p[1];
   }
+
   return res;
 }
- 
+
+// regex version
+function parseQueryString(str) {
+
+  if (typeof str !== 'string') {
+    return {};
+  }
+
+  var s = str.split('?')[1]
+  , p = /(\w+)=(\w*)(?:&|$)/g
+  , m
+  , res = {}
+  ;
+
+  while (m = p.exec(s)) {
+    res[m[1]] = m[2];
+  }
+
+  return res;
+}
+
 var url1 = "http://www.taobao.com/index.php?key0=0&key1=1&key2=2";
 var url2 = "http://www.taobao.com/index.php?key0=0&key1=1&key2=2&key3";
  
